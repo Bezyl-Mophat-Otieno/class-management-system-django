@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block content %}
+
+<h5 class="text-success w-bold text-center">CLASS MANAGEMENT SYSTEM</h5>
+<div class="card mb3 d-flex mt-5">
+  <div class="card-body d-flex justify-content-between m-5 ms-5">
+    <div class="dropdown">
+      <button
+        class="btn btn-success dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        STUDENT
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="{% url 'class:studentform' %}"
+          >Add New Student</a
+        >
+        <a class="dropdown-item" href="{% url 'class:students' %}"
+          >View Students
+        </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button
+        class="btn btn-success dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        UNIT
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="{% url 'class:unitform' %}"
+          >Add New Unt</a
+        >
+        <a class="dropdown-item" href="{%url 'class:units' %}">View Units</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button
+        class="btn btn-success dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        CLASS
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="{%url 'class:newclass' %}"
+          >Add New Class</a
+        >
+        <a class="dropdown-item" href="{% url 'class:addclassstudent' %}"
+          >Add Student To Class</a
+        >
+        <a class="dropdown-item" href="{% url 'class:addmarks' %}"
+          >Add MarkSheets</a
+        >
+        <a class="dropdown-item" href="{% url 'class:marksheets' %}"
+          >View Results</a
+        >
+        <a class="dropdown-item" href="#"></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

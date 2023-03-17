@@ -1,0 +1,29 @@
+{% extends 'base.html'%} {% block content%} {%if submitted%}
+<button class="alert alert-success btn btn-block">
+  Student Added successfully
+</button>
+{%endif%}
+<h5 class="text-success w-bold text-center">CLASS LIST</h5>
+<table class="table table-striped mt-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">Registration Number</th>
+      <th scope="col">Course of Study</th>
+      <th scope="col">Unit Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in classlist %}
+    <tr>
+      <th scope="row">{{student.id}}</th>
+      <td>{{student.std_name}}</td>
+      <td>{{student.std_regno}}</td>
+      <td>{{student.std_course}}</td>
+      <td>{{student.unit_code}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

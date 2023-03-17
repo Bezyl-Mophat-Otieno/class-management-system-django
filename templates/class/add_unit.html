@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+<form class="mt-5" action="add_unit" method="POST">
+  <h5 class="text-success w-bold text-center">UNIT REGISTERATION</h5>
+  {%csrf_token%} {{form.as_p}}
+  <button type="submit" class="btn btn-success">Add Unit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html'%} {% block content%} {%if submitted%}
+<button class="alert alert-success btn btn-block">
+  Student Added successfully
+</button>
+{%endif%}
+
+<table class="table table-striped">
+  <h5 class="text-success w-bold text-center">STUDENTS</h5>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">Registration Number</th>
+      <th scope="col">Course of Study</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+    <tr>
+      <th scope="row">{{student.id}}</th>
+      <td>{{student.std_name}}</td>
+      <td>{{student.std_regno}}</td>
+      <td>{{student.std_course}}</td>
+      <td>
+        <div class="d-flex justify-content-between">
+          <a href="" type="button" class="btn btn-outline-success">Edit</a>
+          <a href="#" type="button" class="btn btn-outline-danger">Delete</a>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

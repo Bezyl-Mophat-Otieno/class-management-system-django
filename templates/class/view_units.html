@@ -1,0 +1,30 @@
+{% extends 'base.html'%} {% block content%} {%if submitted%} {%endif%}
+
+<table class="table table-striped mt-5">
+  <h5 class="text-success w-bold text-center">UNITS OFFERED</h5>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Unit Tittle</th>
+      <th scope="col">Unit Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for unit in units %}
+    <tr>
+      <th scope="row">{{unit.id}}</th>
+      <td>{{unit.unit_title}}</td>
+      <td>{{unit.unit_code}}</td>
+      <td>
+        <div class="d-flex justify-content-end">
+          <a href=" " type="button" class="btn btn-outline-success g-5">Edit</a>
+          <a href="#" type="button" class="btn btn-outline-danger g-5"
+            >Delete</a
+          >
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

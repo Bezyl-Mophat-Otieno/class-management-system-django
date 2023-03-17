@@ -1,0 +1,35 @@
+{% extends 'base.html'%} {% block content%} {%if submitted%} {%endif%}
+
+<table class="table table-striped mt-5">
+  <h5 class="text-success w-bold text-center">UNIT LIST</h5>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">Unit Code</th>
+      <th scope="col">Cat 1</th>
+      <th scope="col">Cat 2</th>
+      <th scope="col">Cat 3</th>
+      <th scope="col">Final Unit Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for class in classes %}
+    <tr>
+      <th scope="row">{{marksheet.id}}</th>
+      <td>{{class.unit_code}}</td>
+      <td>{{class.cat1}}</td>
+      <td>{{class.cat2}}</td>
+      <td>{{class.cat3}}</td>
+      <td>{{class.final_exam_grade}}</td>
+      <td>
+        <div class="d-flex justify-content-between">
+          <a href="#" type="button" class="btn btn-outline-success">Edit</a>
+          <a href="#" type="button" class="btn btn-outline-danger">Delete</a>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
